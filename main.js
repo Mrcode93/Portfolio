@@ -31,9 +31,9 @@ addBtn.addEventListener("click", function(event) {
         btns.classList.add("btn");
         newTodo.appendChild(btns);
         const btn1 = document.createElement("button");
-        btn1.innerText = "Completed";
+        btn1.innerHTML = `<i class="fas fa-check"></i>`;
         const btn2 = document.createElement("button");
-        btn2.innerText = "Delete";
+        btn2.innerText = "X";
         btns.appendChild(btn1);
         btns.appendChild(btn2);
         btn1.addEventListener("click", completedTodo);
@@ -59,7 +59,11 @@ function deleteTodo(e) {
     let todosList = JSON.parse(localStorage.getItem("todosList"));
     // console.log(todosList[0]);
     todosList.forEach(function(todo, index) {
-        if (todo === e.target.parentNode.parentNode.innerHTML.split("<")[0]) {
+        if (localStorage.getItem("todosList") === null) {
+            todosList = [];
+        } else if (
+            todo === e.target.parentNode.parentNode.innerHTML.split("<")[0]
+        ) {
             console.log(todo);
             // console.log();
             todosList.splice(index, 1);
@@ -93,9 +97,9 @@ function getTodos() {
         btns.classList.add("btn");
         newTodo.appendChild(btns);
         const btn1 = document.createElement("button");
-        btn1.innerText = "Completed";
+        btn1.innerHTML = `<i class="fas fa-check"></i>`;
         const btn2 = document.createElement("button");
-        btn2.innerText = "Delete";
+        btn2.innerText = "X";
         btns.appendChild(btn1);
         btns.appendChild(btn2);
         btn2.addEventListener("click", deleteTodo);
