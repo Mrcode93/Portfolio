@@ -1,0 +1,239 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('/todoList/pexels-gradienta-6985119.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    ;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.105), rgba(255, 255, 255, 0.169));
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(30px);
+}
+
+.text {
+    width: 250px;
+    height: 80px;
+    background-color: #fff;
+    z-index: 8;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+
+h1 {
+    z-index: 9;
+    display: flex;
+    background: linear-gradient(45deg, #ee6352, rgb(157, 238, 51), purple, #ee6352);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.box {
+    margin-top: 20px;
+    z-index: 9;
+    width: 700px;
+    min-height: 100px;
+    background-color: rgb(20, 165, 248);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 25px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.box .input-box {
+    width: 600px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 90px;
+    background-color: rgba(250, 250, 250, 0.413);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.input-box input {
+    border: 2px solid rgb(12, 213, 39);
+    width: 70%;
+    height: 40px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin-right: 20px;
+    padding: 0 20px;
+    color: rgb(20, 165, 248);
+    font-size: 18px;
+}
+
+.input-box input:focus {
+    outline: none;
+    border: none;
+}
+
+.input-box button {
+    border: 2px solid white;
+    outline: none;
+    width: 70px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 35px;
+    color: #fff;
+    background-color: rgb(12, 213, 39);
+    cursor: pointer;
+}
+
+.box .todos {
+    width: 600px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 90px;
+    background-color: rgba(250, 250, 250, 0.413);
+    border-radius: 20px;
+    padding: 25px;
+    margin-top: 50px;
+    transition: all 1.5s;
+    -webkit-transition: all 1.5s;
+    -moz-transition: all 1.5s;
+    -ms-transition: all 1.5s;
+    -o-transition: all 1.5s;
+}
+
+.todos .todo-box {
+    width: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+ul li {
+    list-style-type: none;
+}
+
+.todo {
+    width: 500px;
+    background-color: white;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    margin-top: 10px;
+    position: relative;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
+    -o-transition: all .5s;
+}
+
+.todo .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.btn button {
+    border: 2px solid white;
+    outline: none;
+    width: 70px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #fff;
+    cursor: pointer;
+    margin: 5px;
+    font-weight: bold;
+    background-color: rgb(30, 201, 4);
+}
+
+.btn button:last-child {
+    background-color: rgb(208, 75, 75);
+    font-size: 14px;
+}
+
+.btn button:active:last-child {
+    background-color: red
+}
+
+.btn button:active:first-child {
+    background-color: rgb(4, 255, 38);
+}
+
+.completed {
+    text-decoration: line-through;
+    color: rgba(0, 0, 0, 0.419);
+    background-color: rgba(56, 233, 62, 0.389);
+}
+
+.delete {
+    animation: fadeOut 1s;
+    -webkit-animation: fadeOut 1s;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateZ(50px);
+        -webkit-transform: translateZ(50px);
+        -moz-transform: translateZ(50px);
+        -ms-transform: translateZ(50px);
+        -o-transform: translateZ(50px);
+    }
+}
