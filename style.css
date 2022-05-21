@@ -58,7 +58,6 @@ h1 {
 .box {
     margin-top: 20px;
     z-index: 9;
-    width: 700px;
     min-height: 100px;
     background-color: rgb(20, 165, 248);
     border-radius: 20px;
@@ -66,58 +65,14 @@ h1 {
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
     padding: 25px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 400px) {
-    .box,
-    #box {
-        max-width: 90%;
-        padding: 5px 5px
-    }
-    .input-box {
-        max-width: 300px;
-        max-height: 80px;
-        padding: 10
-    }
-    .input-box input,
-    .todo-box {
-        max-width: 400px;
-        max-height: 30px;
-        margin: 0;
-    }
-    .todo-list {
-        padding: 0;
-        max-width: 100%;
-    }
-    .todo {
-        overflow: hidden;
-        max-width: 100%;
-        max-height: 40px
-    }
-    button {
-        max-width: 30px;
-        max-height: 30px;
-        margin: 0;
-    }
-    /* 
-    
-    .todos,
-    box,
-    
-    .todo */
-}
-
 .box .input-box {
-    width: 600px;
     display: flex;
-    align-items: flex-start;
-    justify-content: center;
     height: 90px;
     background-color: rgba(250, 250, 250, 0.413);
     border-radius: 20px;
@@ -127,7 +82,6 @@ h1 {
 
 .input-box input {
     border: 2px solid rgb(12, 213, 39);
-    width: 70%;
     height: 40px;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -138,6 +92,7 @@ h1 {
     padding: 0 20px;
     color: rgb(20, 165, 248);
     font-size: 18px;
+    width: 80%;
 }
 
 .input-box input:focus {
@@ -147,8 +102,8 @@ h1 {
 
 .input-box button {
     border: 2px solid white;
+    width: 15%;
     outline: none;
-    width: 70px;
     height: 40px;
     border-radius: 10px;
     font-size: 25px;
@@ -272,5 +227,37 @@ ul li {
         -moz-transform: translateZ(50px);
         -ms-transform: translateZ(50px);
         -o-transform: translateZ(50px);
+    }
+}
+
+@media (max-width: 375px) {
+    .box {
+        max-width: 90%;
+        padding: 5px 5px
+    }
+    .input-box {
+        max-width: 350px;
+        max-height: 80px;
+        padding: 10
+    }
+    .input-box input,
+    .todo-box {
+        max-width: 300px;
+        max-height: 30px;
+        margin: 0;
+    }
+    .todo-list {
+        padding: 0;
+        max-width: 100%;
+    }
+    .todo {
+        overflow: hidden;
+        max-width: 100%;
+        max-height: 40px
+    }
+    button {
+        max-width: 30px;
+        max-height: 30px;
+        margin: 0;
     }
 }
